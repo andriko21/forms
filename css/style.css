@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: var(--title-text-color);
   letter-spacing: 0.03em;
   font-weight: 400;
@@ -92,7 +92,7 @@ header {
 }
 
 .item .links::after {
-  content: '';
+  content: "";
   position: absolute;
 
   left: 0;
@@ -183,14 +183,16 @@ header {
 /*Кнопка*/
 
 .button {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding-right: 32px;
   padding-left: 32px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  margin-left: 600px;
 
   color: var(--primary-white-color);
   background: var(--acent-color);
@@ -355,15 +357,15 @@ header {
   background-color: var(--primary-white-color);
   justify-content: center;
   align-items: center;
+
   margin-right: 10px;
+  transition: color var(--time-transition) var(--function-bezier),
+    background-color var(--time-transition) var(--function-bezier),
+    box-shadow var(--time-transition) var(--function-bezier);
 }
 
 .social-link:hover,
 .social-link:focus {
-  transition: color var(--time-transition) var(--function-bezier),
-    background-color var(--time-transition) var(--function-bezier),
-    box-shadow var(--time-transition) var(--function-bezier);
-
   color: var(--primary-white-color);
   background-color: var(--acent-color);
 }
@@ -471,7 +473,7 @@ footer {
 }
 
 .web {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
@@ -481,7 +483,7 @@ footer {
 }
 
 .studio {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
@@ -538,8 +540,8 @@ footer {
   height: 20px;
   fill: currentColor;
 }
-.form-fild {
-  margin-left: 93px;
+.form-footer {
+  margin-left: auto;
 }
 
 .form-input {
@@ -607,6 +609,7 @@ footer {
 }
 
 .modal {
+  padding-bottom: 40px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -644,6 +647,181 @@ footer {
   border-radius: 50%;
   cursor: pointer;
   background: var(--primary-white-color);
+
+  transition: fill var(--time-transition) var(--function-bezier);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  fill: var(--acent-color);
+}
+.modal-form {
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.modal-form-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
+}
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fild {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  margin-left: 0;
+}
+
+.input {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 35px;
+
+  border-color: rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-top: 4px;
+  transition: border-color var(--time-transition) var(--function-bezier);
+}
+
+.input:focus,
+.input:hover {
+  border-color: var(--acent-color);
+}
+
+.input:focus ~ svg,
+.input:hover ~ svg {
+  fill: var(--acent-color);
+}
+
+.textarea:focus,
+.textarea:hover {
+  border-color: var(--acent-color);
+}
+
+.form-fild svg {
+  transition: fill var(--time-transition) var(--function-bezier);
+}
+
+.form-fild label {
+  font-size: 12px;
+  line-height: 1.16;
+
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.textarea {
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: none;
+  transition: border-color var(--time-transition) var(--function-bezier);
+}
+
+.form-fild ::placeholder {
+  padding: 16px 12px;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 1.16px;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+.form-fild svg {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateX(50%);
+}
+
+.form-checkbox {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  line-height: 1.71;
+
+  align-items: center;
+  justify-content: center;
+
+  letter-spacing: 0.03em;
+
+  color: var(--paragraph-color);
+}
+
+.conditions {
+  color: var(--acent-color);
+  text-decoration: underline;
+}
+.button-modal {
+  margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 30px;
+
+  width: 200px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  color: var(--primary-white-color);
+  background: var(--acent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  border: #ffffff;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+.checkbox {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.checkbox-icon {
+  margin-right: 7px;
+  display: inline-block;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 2px;
+
+  transition: all var(--time-transition) var(--function-bezier);
+}
+
+.checkbox:checked + .checkbox-icon {
+  background-origin: border-box;
+  background-size: contain;
+  background-color: var(--acent-color);
+  border: 2px solid var(--acent-color);
+  background-image: url(../images/iconCheck.svg);
 }
 
 /*PORTFOLIO*/

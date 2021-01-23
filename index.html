@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>position and animation</title>
+    <title>forms</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
@@ -482,7 +482,7 @@
             </li>
           </ul>
         </div>
-        <div class="form-fild">
+        <div class="form-footer">
           <h3 class="join list">Подпишитесь на рассылку</h3>
           <form>
             <input class="form-input" type="email" placeholder="E-mail" />
@@ -491,7 +491,6 @@
               Подписаться
               <svg class="form-icon" width="24" height="20">
                 <use href="./images/symbol-defs.svg#icon-send"></use>
-                
               </svg>
             </button>
           </form>
@@ -506,26 +505,75 @@
             <use href="./images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
+        <div class="modal-form">
+          <h3 class="modal-form-title list">
+            Оставьте свои данные, мы вам перезвоним
+          </h3>
+          <form class="form-list">
+            <div class="form-fild list">
+              <label for="name">Имя</label>
+              <input type="text" id="name" class="input" />
+              <svg height="16" width="16">
+                <use href="./images/symbol-defs.svg#icon-person"></use>
+              </svg>
+            </div>
+            <div class="form-fild list">
+              <label for="tel">Телефон</label>
+              <input type="tel" id="tel" class="input" />
+              <svg height="16" width="16">
+                <use href="./images/symbol-defs.svg#icon-tel-2"></use>
+              </svg>
+            </div>
+            <div class="form-fild list">
+              <label for="email">Почта</label>
+              <input type="email" id="email" class="input" />
+              <svg height="16" width="16">
+                <use href="./images/symbol-defs.svg#icon-mail-2"></use>
+              </svg>
+            </div>
+            <div class="form-fild list">
+              <label for="comet">Комментарий</label>
+              <textarea
+                class="textarea"
+                id="comet"
+                cols="30"
+                rows="10"
+                placeholder="Введите текст"
+              ></textarea>
+            </div>
+            <div class="form-checkbox list">
+              <label class="checkbox-label">
+                <input type="checkbox" class="checkbox" />
+                <span class="checkbox-icon"></span>
+                 Соглашаюсь с рассылкой и принимаю&nbsp;
+                <span
+                  ><a class="conditions list" href="#" >Условия договора </a>
+              </span>               
+             </label>
+            </div>
+            <button class="button-modal list">Отправить</button>
+          </form>
+        </div>
       </div>
     </div>
     <script>
       const refs = {
-        openModalBtn: document.querySelector('[data-open-modal]'),
-        closeModalBtn: document.querySelector('[data-close-modal]'),
-        backdrop: document.querySelector('[data-backdrop]'),
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
       };
 
-      refs.openModalBtn.addEventListener('click', toggleModal);
-      refs.closeModalBtn.addEventListener('click', toggleModal);
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
 
-      refs.backdrop.addEventListener('click', logBackdropClick);
+      refs.backdrop.addEventListener("click", logBackdropClick);
 
       function toggleModal() {
-        refs.backdrop.classList.toggle('is-hidden');
+        refs.backdrop.classList.toggle("is-hidden");
       }
 
       function logBackdropClick() {
-        console.log('Это клик в бекдроп');
+        console.log("Это клик в бекдроп");
       }
     </script>
   </body>
